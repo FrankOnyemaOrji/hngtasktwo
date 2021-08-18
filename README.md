@@ -6,4 +6,3 @@ A flutter app that accepts an input and shows the output (user_input).
 the Zuri/HNG/i4g logos are located in the logos folder
 myname folder contains the dartfile the prints my name
 the links folder containers all the links
-![][assets/maker.gif]
