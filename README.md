@@ -1,16 +1,9 @@
-# simpleinputapp
+HNGi8-Stage-2-tasks
+This repository contains the Stage 2 tasks for HNGi8
 
-A new Flutter project.
-
-## Getting Started
-
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
-
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+A dart file that prints my name (my_name.dart)
+A flutter app that accepts an input and shows the output (user_input).
+the Zuri/HNG/i4g logos are located in the logos folder
+myname folder contains the dartfile the prints my name
+the links folder containers all the links
+![][assets/maker.gif]
