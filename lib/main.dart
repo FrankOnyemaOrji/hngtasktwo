@@ -21,6 +21,8 @@ class SimpleApp extends StatelessWidget {
 class Pageone extends StatelessWidget {
   Pageone({Key? key}) : super(key: key);
   final nameController = TextEditingController();
+  final ageController = TextEditingController();
+  final stackController = TextEditingController();
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -44,7 +46,19 @@ class Pageone extends StatelessWidget {
                 const SizedBox(
                   height: 8,
                 ),
-
+                TextFormField(
+                  decoration:
+                      kTextInputDecoration.copyWith(hintText: 'Enter Your Age'),
+                  controller: ageController,
+                ),
+                const SizedBox(
+                  height: 8.0,
+                ),
+                TextFormField(
+                  decoration: kTextInputDecoration.copyWith(
+                      hintText: 'Enter Your Stack'),
+                  controller: stackController,
+                ),
                 const SizedBox(
                   height: 12,
                 ),
@@ -53,13 +67,18 @@ class Pageone extends StatelessWidget {
                   child: const Center(child: Text('Enter')),
                   onPressed: () {
                     var nameEntered = nameController.text;
+                    var ageEntered = ageController.text;
+                    var stackEnterd = stackController.text;
                     // ignore: avoid_print
                     print('Name $nameEntered');
                     Navigator.push(
                         context,
                         MaterialPageRoute(
-                            builder: (context) =>
-                                PageTwo(getName: nameEntered)));
+                            builder: (context) => PageTwo(
+                                  getName: nameEntered,
+                                  getAge: ageEntered,
+                                  getStack: stackEnterd,
+                                )));
                   },
                 )
               ],
@@ -72,9 +91,16 @@ class Pageone extends StatelessWidget {
 }
 
 class PageTwo extends StatelessWidget {
-  const PageTwo({Key? key, required this.getName}) : super(key: key);
+  const PageTwo(
+      {Key? key,
+      required this.getName,
+      required this.getAge,
+      required this.getStack})
+      : super(key: key);
   // ignore: prefer_typing_uninitialized_variables
   final getName;
+  final getAge;
+  final getStack;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -83,9 +109,9 @@ class PageTwo extends StatelessWidget {
       ),
       body: Center(
         child: Text(
-          'Welcome $getName',
+          'Welcome\n Name: $getName,\n Age: $getAge,\n Stack: $getStack',
           style: const TextStyle(
-              color: Colors.black, fontSize: 40, fontWeight: FontWeight.bold),
+              color: Colors.black, fontSize: 30, fontWeight: FontWeight.bold),
         ),
       ),
     );
